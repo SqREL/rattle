@@ -17,6 +17,7 @@ gem 'font-awesome-rails'
 gem 'figaro'
 gem 'haml-rails'
 gem 'kaminari'
+gem 'devise'
 
 gem 'sidekiq', '~>3.2'
 gem 'sidekiq-failures', '~> 0.4.3'
