@@ -11,3 +11,11 @@
 /log/*
 !/log/.keep
 /tmp
+
+.ruby-version
+.rbenv-gemsets
+
+config/application.yml
+config/database.yml
+.DS_Store
+/coverage
