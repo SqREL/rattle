@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :owner_id
 
       t.timestamps null: false
+      t.index :owner_id
     end
   end
 end

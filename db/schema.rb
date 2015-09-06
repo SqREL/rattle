@@ -17,9 +17,14 @@ ActiveRecord::Schema.define(version: 20150905125639) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.integer  "owner_id"
+    t.integer  "post_id"
+    t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "comments", ["owner_id", "post_id"], name: "index_comments_on_owner_id_and_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",      limit: 512
@@ -28,6 +33,8 @@ ActiveRecord::Schema.define(version: 20150905125639) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  add_index "posts", ["owner_id"], name: "index_posts_on_owner_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
