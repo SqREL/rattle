@@ -1,0 +1,21 @@
+.post-wrapper.row
+  .col-md-1
+    .voting
+      = button_to post_vote_path(post), { params: { vote: :up }, remote: true, class: 'btn btn-default btn-xs btn-block'} do
+        %i.glyphicon.glyphicon-arrow-up
+      .rating
+        = post.humanized_rating
+      = button_to post_vote_path(post), { params: { vote: :down }, remote: true, class: 'btn btn-default btn-xs btn-block'} do
+        %i.glyphicon.glyphicon-arrow-down
+  .col-md-11
+    .post
+      %h2
+        = link_to post.title, post.url
+      %p.lead
+        by
+        = post.owner_name_or_email
+      %p
+        %span.glyphicon.glyphicon-time
+        Posted on #{post.created_at.strftime("%A, %B %d, %Y at %H:%M")}
+        = link_to "Comments (#{post.comments.count}) >>", post_path(post)
+%hr/

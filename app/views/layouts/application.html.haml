@@ -1,9 +1,29 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
     %title Rattle
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
+    /[if lt IE 9]
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   %body
-    = yield
+    = render 'shared/navigation'
+
+    .container
+      .row
+        .col-md-8
+          = yield
+        = render 'shared/sidebar'
+      %hr/
+      %footer
+        .row
+          .col-lg-12
+            %p Copyright © Rattle 2015

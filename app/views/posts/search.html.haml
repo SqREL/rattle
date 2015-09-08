@@ -1,0 +1,17 @@
+.col-md-8
+  %h1.page-header
+    "#{params[:criterium]}"
+    %small search results
+  - @posts.each do |post|
+    %h2
+      = link_to post.title, post.url
+    %p.lead
+      by
+      = post.owner_name_or_email
+    %p
+      %span.glyphicon.glyphicon-time
+      Posted on August 28, 2013 at 10:00 PM
+    %hr/
+
+  = paginate @posts
+x

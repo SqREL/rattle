@@ -1,0 +1,12 @@
+---
+:concurrency: 5
+:pidfile: tmp/pids/sidekiq.pid
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 20
+:queues:
+  - [scoped_posts_rating, 7]
+  - [post_rating_recalculator, 5]
+  - default
+

@@ -1,0 +1,5 @@
+.col-md-12
+  = render 'posts/item', post: @post
+  .comments
+    = render 'posts/comments/collection', comments: @post.comments.hash_tree
+    = render 'posts/comments/form', comment: @post.comments.build

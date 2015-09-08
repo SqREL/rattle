@@ -1,12 +1,7 @@
-- if current_user.present?
-  = link_to 'Sign out', destroy_user_session_path
-- else
-  = link_to 'Sign up', new_user_registration_path
-  = link_to 'Sign in', new_user_session_path
-
-- if current_user.present?
-  = link_to 'Create user', new_post_path
-
-- @posts.each do |post|
-  %p= link_to post.title, post.url
-
+.col-md-12
+  %h1.page-header
+    Top posts
+    %small from all subrattles
+  - @posts.each do |post|
+    = render 'posts/item', post: post
+  = paginate @posts

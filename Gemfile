@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
+gem 'bootstrap_form'
 gem 'font-awesome-rails'
 gem 'figaro'
 gem 'haml-rails'
@@ -21,12 +22,18 @@ gem 'devise'
 
 gem 'sidekiq', '~>3.2'
 gem 'sidekiq-failures', '~> 0.4.3'
-gem 'sinatra', '>= 1.3.0', require: nil
+gem 'sidetiq', '0.6.1'
+gem 'ice_cube', '0.12.1'
+gem 'sinatra', '>= 1.3.0', require: false
+gem 'faker'
+gem 'closure_tree'
+gem 'friendly_id', '~> 5.1.0'
+gem 'pg_search'
+gem 'statistics2', require: false
 
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
-  gem 'faker'
 end
 
 group :development do

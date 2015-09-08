@@ -1,0 +1,14 @@
+.col-md-4
+  .well
+    %h4 Blog Search
+    = bootstrap_form_tag url: search_posts_path, method: :get do |f|
+      = f.text_field :criterium, append: f.submit('Find'), hide_label: true
+  - if current_user.present?
+    .well
+      = link_to new_post_path do
+        .btn.btn-default.btn-block
+          %i.glyphicon.glyphicon-plus
+          Create post
+  .well
+    %h4 Rattle
+    %p Just another reddit clone without good search because of Heroku

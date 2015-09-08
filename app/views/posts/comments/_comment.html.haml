@@ -1,0 +1,12 @@
+.well
+  %p.text-muted
+    Added by
+    %strong= comment.owner_name_or_email
+    on
+    \#{l(comment.created_at, format: '%B, %d %Y %H:%M:%S')}
+  %blockquote
+    %p= comment.body
+    .comment-form.hidden
+      = render 'posts/comments/form', comment: comment.children.build(post_id: comment.post_id)
+    =link_to 'Reply', '#', class: 'btn btn-default reply'
+    = render 'posts/comments/collection', comments: nested_comments
