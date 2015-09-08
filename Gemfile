@@ -54,3 +54,6 @@ group :test do
   gem 'poltergeist'
 end
 
+group :production do
+  gem 'unicorn'
+end
