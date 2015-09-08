@@ -19,7 +19,7 @@ putc '.'
 
 User.find_each do |user|
   Post.find_each do |post|
-    post.vote user, ['up', 'down'].shuffle.first
+    user.vote_for post, ['up', 'down'].shuffle.first
     post.comments.create!(owner: user, body: Faker::Lorem.sentence(2))
   end
 end
